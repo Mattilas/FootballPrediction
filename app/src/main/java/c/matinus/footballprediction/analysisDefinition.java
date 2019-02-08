@@ -259,4 +259,21 @@ public class analysisDefinition extends AppCompatActivity {
         }
         return stringArrayList;
     }
+
+    public void analyse (View view) {
+        //Verifying that game is valid
+
+        //Verifying that game is incoming
+
+    }
+
+    public boolean isIncomingGame (Game game) {
+        boolean isIncoming = false ;
+
+        //Creating the list of incoming games
+
+
+        return isIncoming;
+    }
+
 }
