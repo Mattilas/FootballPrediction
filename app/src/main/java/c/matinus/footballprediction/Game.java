@@ -1,6 +1,8 @@
 package c.matinus.footballprediction;
 
 
+import android.support.annotation.NonNull;
+
 public class Game {
     private Team awayTeam;
     private final double currentRankImportance = 0.6d;
@@ -75,4 +77,28 @@ public class Game {
     public void setAwayTeam(Team awayTeam) {
         this.awayTeam = awayTeam;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (o == this) return true;
+        if (!(o instanceof Game)) {
+            return false;
+        }
+
+        Game game = (Game) o;
+
+        return this.homeTeam.isSameTeam(game.homeTeam.getName()) &&
+                this.awayTeam.isSameTeam(game.awayTeam.getName());
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return this.getHomeTeam() + " - " + this.getAwayTeam();
+    }
+
+
+
 }

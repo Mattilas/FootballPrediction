@@ -248,4 +248,27 @@ public class Team {
     public void setName(String name) {
         this.name = name;
     }
+
+    public boolean isSameTeam (String teamName) {
+        int similitude = 0;
+        String partieCommune = "";
+
+        for ( int i=0; i< name.length()  ; i++){
+            for ( int j=0; j< teamName.length() ; j++){
+                    if(name.charAt(i) == teamName.charAt(j)) {
+                        if (partieCommune.indexOf(name.charAt(i)) == -1){
+                            similitude ++;
+                            partieCommune += name.charAt(i);
+                        }
+
+                    }
+            }
+        }
+        return similitude >= 3;
+    }
+
+    public String toString() {
+        return this.getName();
+    }
+
 }
